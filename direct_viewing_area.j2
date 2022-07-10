@@ -1,0 +1,12 @@
+$TTL    86400
+@   IN  SOA {{ dns1_test_local }}   {{ root_test_local }} (
+        2019112201  ;Serial
+        3600        ;Refresh
+        1800        ;Retry
+        604800      ;Expire
+        86400       ;Minimum TTL
+)
+
+        IN  NS  {{ dns1_test_local }} 
+{{ dns1_name }} IN  A   {{ dns1_ip_address }}
+{{ dns2_name }} IN  A   {{ dns2_ip_address }}
