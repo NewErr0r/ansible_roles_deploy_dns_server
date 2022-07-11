@@ -1,0 +1,13 @@
+
+zone "{{ direct_viewing_area }}" {
+	type master;
+	file "{{path_for_var_dns}}/{{ direct_viewing_area }}.db";
+	allow-update { any; };
+};
+
+zone "{{ reverse_viewing_area }}" {
+	type master;
+	file "{{path_for_var_dns}}/{{ reverse_viewing_area }}.db";
+};
+
+

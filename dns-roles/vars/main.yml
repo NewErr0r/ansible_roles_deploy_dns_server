@@ -1,3 +1,6 @@
 ---
-directory_for_the_direct_viewing_zone: /var/named/{{ direct_viewing_area }} #создание файла для зоны прямого просмотра
-directory_for_the_reverse_viewing_zone: /var/named/{{ reverse_viewing_area }} #создание файла для зоны оьратного просмотра
+directory_for_the_direct_viewing_zone: /var/named/{{ direct_viewing_area }} #создание файла для зоны прямого просмотра CentOS
+directory_for_the_reverse_viewing_zone: /var/named/{{ reverse_viewing_area }} #создание файла для зоны оьратного просмотра CentOS
+
+directory_for_file_named_conf_options: /etc/bind/named.conf.options #для Debian
+directory_for_file_named_conf_defaults_zones: /etc/bind/named.conf.default-zones # для Debian

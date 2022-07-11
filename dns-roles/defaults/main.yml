@@ -11,3 +11,5 @@ dns1_reverse_ip: "105"
 dns1_reverse_name: "{{ dns1_test_local }}"
 dns2_reverse_ip: "110"
 dns2_reverse_name: "{{ dns2_name }}.{{ direct_viewing_area }}."
+
+path_for_var_dns: /var/dns #путь для Debian 

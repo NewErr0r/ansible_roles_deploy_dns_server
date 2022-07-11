@@ -1,0 +1,20 @@
+---
+- name: Install packege "bind9" for Debian
+  apt:
+    name: bind9 
+    state: latest
+
+- name: Deploy file "named.conf.options" for Debian
+  template: 
+    src: named.conf.options.j2
+    dest: "{{ directory_for_file_named_conf_options }}"
+
+- name: Deploy file "named.conf.default-zones" for Debian 
+  template:
+    src: named.conf.default-zones.j2
+    dest: "{{ directory_for_file_named_conf_defaults_zones }}"
+
+- name: Create directory for "/var/dns"
+  file:
+    path: "{{ path_for_var_dns }}"
+    state: directory
