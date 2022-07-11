@@ -1,0 +1,16 @@
+---
+- name: Started and Enabled named service
+  service:
+    name: named
+    enabled: true
+    state: started
+
+- name: Restart Firewalld
+  service:
+    name: firewalld
+    state: restarted
+
+- name: Restart named service
+  service: 
+    name: named
+    state: restarted

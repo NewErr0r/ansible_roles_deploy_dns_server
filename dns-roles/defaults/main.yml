@@ -1,0 +1,13 @@
+---
+direct_viewing_area: "test.local"   #Имя для зоны прямого просмотра
+reverse_viewing_area: "0.168.192.in-addr.arpa" #Имя для зоны обратного просмотра
+dns1_test_local: "dns1.{{ direct_viewing_area }}." #основная запись
+root_test_local: "root.{{ direct_viewing_area }}." #основная запись
+dns1_name: "dns1" 
+dns1_ip_address: "192.168.0.105"
+dns2_name: "Debian"
+dns2_ip_address: "192.168.0.110"
+dns1_reverse_ip: "105"
+dns1_reverse_name: "{{ dns1_test_local }}"
+dns2_reverse_ip: "110"
+dns2_reverse_name: "{{ dns2_name }}.{{ direct_viewing_area }}."

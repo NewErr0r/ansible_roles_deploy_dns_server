@@ -1,0 +1,37 @@
+---   
+- name: Install packege "bind" for CentOS
+  yum:
+    name: bind 
+    state: latest
+  notify:
+    - Started and Enabled named service
+
+- name: Put SELinux in permissive mode, logging actions that would be blocked for CentOS
+  ansible.posix.selinux:
+    policy: targeted
+    state: permissive
+
+- name: Permissions for Firewalld for CentOS
+  firewalld:
+    service: dns 
+    permanent: yes
+    state: enabled 
+  notify:
+    - Restart Firewalld
+
+- name: Deploy file "named.conf" for CentOS
+  template:
+    src: named.conf.j2
+    dest: /etc/named.conf
+
+- name: Creating a Direct View Zone file for CentOS
+  template:
+    src: direct_viewing_area.j2
+    dest: "{{ directory_for_the_direct_viewing_zone }}"
+
+- name: Creating a Direct Reverse Zone file for CentOS
+  template:
+    src: reverse_viewing_area.j2
+    dest: "{{ directory_for_the_reverse_viewing_zone }}"
+  notify:
+    - Restart named service

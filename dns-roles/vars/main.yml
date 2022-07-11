@@ -1,0 +1,3 @@
+---
+directory_for_the_direct_viewing_zone: /var/named/{{ direct_viewing_area }} #создание файла для зоны прямого просмотра
+directory_for_the_reverse_viewing_zone: /var/named/{{ reverse_viewing_area }} #создание файла для зоны оьратного просмотра
