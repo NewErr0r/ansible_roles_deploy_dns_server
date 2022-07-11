@@ -4,12 +4,15 @@ reverse_viewing_area: "0.168.192.in-addr.arpa" #Имя для зоны обра�
 dns1_test_local: "dns1.{{ direct_viewing_area }}." #основная запись
 root_test_local: "root.{{ direct_viewing_area }}." #основная запись
 dns1_name: "dns1" 
-dns1_ip_address: "192.168.0.105"
+dns1_ip_address: "192.168.0.105" #CentOS
 dns2_name: "Debian"
-dns2_ip_address: "192.168.0.110"
+dns2_ip_address: "192.168.0.110" #Debian
 dns1_reverse_ip: "105"
 dns1_reverse_name: "{{ dns1_test_local }}"
 dns2_reverse_ip: "110"
 dns2_reverse_name: "{{ dns2_name }}.{{ direct_viewing_area }}."
 
 path_for_var_dns: /var/dns #путь для Debian 
+path_for_direct_viewing_area: "{{ path_for_var_dns }}/{{ direct_viewing_area }}.db" #путь для файла зоны прямого просмотра Debian
+path_for_reverse_viewing_area: "{{ path_for_var_dns }}/{{ reverse_viewing_area }}.db" #путь для файла зоны обратного просмотра Debian
+path_for_file_usr_sbin_named: /etc/apparmor.d/usr.sbin.named

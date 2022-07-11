@@ -18,3 +18,22 @@
   file:
     path: "{{ path_for_var_dns }}"
     state: directory
+
+- name: Creating a Direct View Zone file for Debian
+  template:
+    src: db.local.j2
+    dest: "{{ path_for_direct_viewing_area }}"
+
+- name: Creating a Direct Reverse Zone file for Debian
+  template:
+    src: db.127.j2
+    dest: "{{ path_for_reverse_viewing_area }}"
+  notify: 
+    - Restart Bind9 service
+
+- name: Deploy file for Apparmor "usr.sbin.named"
+  template:
+    src: usr.sbin.named.j2
+    dest: "{{ path_for_file_usr_sbin_named }}"
+  notify: 
+    - Restart Apparmor service

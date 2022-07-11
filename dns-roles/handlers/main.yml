@@ -14,3 +14,13 @@
   service: 
     name: named
     state: restarted
+
+- name: Restart Apparmor service
+  service:
+    name: apparmor 
+    state: restarted
+
+- name: Restart Bind9 service
+  service:
+    name: bind9
+    state: restarted

@@ -1,0 +1,15 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	{{ dns1_test_local }} {{root_test_local}} (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	{{ dns1_test_local }}
+{{ dns1_name }}	IN	A	{{ ansible_ssh_host }}
+
+

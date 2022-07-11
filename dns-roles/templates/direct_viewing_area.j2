@@ -7,6 +7,6 @@ $TTL    86400
         86400       ;Minimum TTL
 )
 
-        IN  NS  {{ dns1_test_local }} 
-{{ dns1_name }} IN  A   {{ dns1_ip_address }}
+        IN  NS  {{ ansible_ssh_host }} 
+{{ dns1_name }} IN  A   {{ ansible_ssh_host }}
 {{ dns2_name }} IN  A   {{ dns2_ip_address }}

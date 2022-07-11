@@ -1,7 +1,7 @@
 ---
-#- include_tasks: centos_dns_server.yaml
-#  when:
-#    - ansible_os_family == 'RedHat'
+- include_tasks: centos_dns_server.yaml
+  when:
+    - ansible_os_family == 'RedHat'
 
 - include_tasks: debian_dns_server.yaml
   when:
